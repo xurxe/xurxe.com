@@ -1,0 +1,29 @@
+/* COLOR SCHEME https://www.color-hex.com/color/8844bb */
+
+@charset "UFT-8";
+
+* {
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    background: #8844bb;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+h1 {
+    font-family: 'Sarabun', sans-serif;
+    font-size: 5vw;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    left: 10%;
+    text-align: center;
+}
