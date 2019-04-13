@@ -82,15 +82,15 @@ function showNavContent() {
 function tuckHamburger() {
     hamburgerTucked = true;
     navWidth = 10;
-    paddingLeft = 13;
+    paddingLeft = 11;
 
     let effect = setInterval(runEffect, 1);
 
     function runEffect() {
         if (navWidth < 3) {
             nav.style.width = '3rem';
-            header.style.paddingLeft = '6rem';
-            main.style.paddingLeft = '6rem';
+            header.style.paddingLeft = '4rem';
+            main.style.paddingLeft = '4rem';
 
             clearInterval(effect);
             return;
@@ -114,15 +114,15 @@ function tuckHamburger() {
 function untuckHamburger() {
     hamburgerTucked = false;
     navWidth = 3;
-    paddingLeft = 5;
+    paddingLeft = 4;
 
     let effect = setInterval(runEffect, 1);
 
     function runEffect() {
         if (navWidth > 10) {
             nav.style.width = '10rem';
-            header.style.paddingLeft = '13rem';
-            main.style.paddingLeft = '13rem';
+            header.style.paddingLeft = '11rem';
+            main.style.paddingLeft = '11rem';
 
             clearInterval(effect);
             return;
@@ -168,8 +168,8 @@ function initialize() {
 
     else {
         nav.style.width = '3rem';
-        header.style.paddingLeft = '6rem';
-        main.style.paddingLeft = '6rem';
+        header.style.paddingLeft = '4rem';
+        main.style.paddingLeft = '4rem';
         hamburgerTucked = true;
 
         for (let i = 0; i < navDivs.length; i++) {

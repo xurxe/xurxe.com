@@ -12,6 +12,7 @@
     padding: 0;
     scroll-behavior: smooth;
     text-decoration: none;
+    overflow-x: hidden;
 }
 
 a {
@@ -53,9 +54,14 @@ h2 {
     margin: 1rem 0 2rem;
 }
 
+h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
 strong {
     color: #8844bb;
-    display: inline-block;
+    display: inline;
     font-size: 30px;
     font-weight: normal;
     letter-spacing: 0.05em;
@@ -105,17 +111,21 @@ nav div {
     padding: 1rem 0;
 }
 
+nav a {
+    display: block;
+    letter-spacing: 0.2em;
+    padding: 0.2rem 1rem 0.3rem;
+}
+
+nav p {
+    overflow-y: hidden;
+}
+
 .nav-logo-div {
     background: white;
     height: 8rem;
     margin: 0 1rem;
     width: 8rem;
-}
-
-nav a {
-    display: block;
-    letter-spacing: 0.2em;
-    padding: 0.2rem 1rem 0.3rem;
 }
 
 .nav-name-div p {
@@ -147,10 +157,35 @@ header p {
 }
 
 
+
 /* MAIN ******************************************************************* */
 main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 2rem;
-    padding-right: 2rem;
+    padding-right: 0;
     padding-bottom: 2rem;
-    padding-left: 13rem;
+    padding-left: 11rem;
+    width: 100vw;
+}
+
+.main-item-div {
+    background: #8844bb;
+    flex-shrink: 1;
+    height: 400px;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    width: 300px;
+}
+
+.main-item-image-div {
+    background: white;
+    height: 198px;
+    width: 100%;
+}
+
+.main-item-div p {
+    padding-bottom: 0.3rem;
 }
