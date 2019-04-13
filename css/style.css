@@ -26,16 +26,40 @@ html {
     font-size: 18px;
 }
 
-/* @media only screen and (min-width: 600px) and (max-width: 900px) {
-    html {
-        font-size: calc(16px + (20 - 16) * (100vw - 600px) / (900 - 600));    }
+h1 {
+    font-size: 120px;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+    color: #8844bb;
+}
+
+h2 {
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    font-weight: normal;
+    color: #1b0d25;
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+    h1 {
+        font-size: calc(50px + (120 - 50) * (100vw - 600px) / (1000 - 600));    
+    }
+
+    h2 {
+        font-size: calc(20px + (30 - 20) * (100vw - 600px) / (1000 - 600));    
+    }
 }
 
 @media only screen and (max-width: 600px) {
-    html {
-        font-size: 16px;
+    h1 {
+        font-size: 50px;
     }
-} */
+    
+    h2 {
+        font-size: 20px;
+    }
+}
 
 .white-text {
     color: white;
@@ -94,22 +118,19 @@ nav a {
     padding: 0.2rem 1rem;
 }
 
-.nav-hamburger-in {
-    width: 3rem;
+.nav-name-div p {
+    font-family: 'Roboto Mono', monospace;
+    line-height: 1.2em;
 }
 
-.nav-hamburger-in .nav-logo-div{
-    height: 2rem;
-    margin: -0.5rem 0.5rem;
-    width: 2rem;
+.nav-name-first, .nav-name-middle {
+    font-size: 2.1rem;
+    letter-spacing: 0.2em;
 }
 
-.nav-hamburger-in a {
-    display: none;
-}
-
-.nav-hamburger-out {
-    width: 100%;
+.nav-name-last {
+    font-size: 1.4rem;
+    letter-spacing: 0.4em;
 }
 
 
@@ -120,5 +141,3 @@ main {
     padding-bottom: 2rem;
     padding-left: 12rem;
 }
-
-
