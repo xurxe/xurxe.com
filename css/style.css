@@ -71,6 +71,9 @@ nav {
     background: #8844bb;
     min-height: 100vh;
     padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 10rem;
 }
 
@@ -91,9 +94,31 @@ nav a {
     padding: 0.2rem 1rem;
 }
 
+.nav-hamburger-in {
+    width: 3rem;
+}
+
+.nav-hamburger-in .nav-logo-div{
+    height: 2rem;
+    margin: -0.5rem 0.5rem;
+    width: 2rem;
+}
+
+.nav-hamburger-in a {
+    display: none;
+}
+
+.nav-hamburger-out {
+    width: 100%;
+}
+
 
 /* MAIN ******************************************************************* */
+main {
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 12rem;
+}
 
 
-
-/* FOOTER ***************************************************************** */
