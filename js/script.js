@@ -1,3 +1,9 @@
+/* CONSTANTS ********************************************************************** */
+let hamburgerTucked;
+
+
+
+/* QUERY SELECTORS **************************************************************** */
 const nav = document.querySelector('nav');
 const navLogoDiv = document.querySelector('.nav-logo-div');
 const navDivs = document.querySelectorAll('.nav-div');
@@ -5,160 +11,81 @@ const navDivs = document.querySelectorAll('.nav-div');
 const header = document.querySelector('header');
 const main = document.querySelector('main');
 
-let hamburgerTucked;
-let opacity;
-let navWidth;
-let paddingLeft;
 
+
+/* FUNCTIONS ********************************************************************** */
 
 function hideNavContent() {
-    hamburgerTucked = true;
-    opacity = 1;
-
-    let effect = setInterval(runEffect, 1);
-
-    function runEffect() {
-        if (opacity < 0) {
-            opacity = 0;
-            for (let i = 0; i < navDivs.length; i++) {
-                navDivs[i].style.opacity = opacity;
-                navDivs[i].style.display = 'none';
-            };
-
-            clearInterval(effect);
-            return;
-        }
-
-        else {
-            opacity -= 0.05;
-
-            for (let i = 0; i < navDivs.length; i++) {
-                navDivs[i].style.opacity = opacity;
-            };
-        };
-
-        console.log(opacity);
+    for (let i = 0; i < navDivs.length; i++) {
+        navDivs[i].classList.remove('visible');
+        navDivs[i].classList.add('invisible');
     };
+    return;
 };
-
-
 
 function showNavContent() {
-    hamburgerTucked = false;
-    opacity = 0;
-
     for (let i = 0; i < navDivs.length; i++) {
-        navDivs[i].style.opacity = opacity;
-        navDivs[i].style.display = 'block';
+        navDivs[i].classList.remove('invisible');
+        navDivs[i].classList.add('visible');
     };
-
-    let effect = setInterval(runEffect, 1);
-
-    function runEffect() {
-        if (opacity > 1) {
-
-            for (let i = 0; i < navDivs.length; i++) {
-                navDivs[i].style.opacity = '1';
-            };
-
-            clearInterval(effect);
-            return;
-        }
-
-        else {
-            opacity += 0.05;
-
-            for (let i = 0; i < navDivs.length; i++) {
-                navDivs[i].style.opacity = opacity;
-            };
-        };
-
-        console.log(opacity);
-    };
+    return;
 };
-
-
 
 function tuckHamburger() {
     hamburgerTucked = true;
-    navWidth = 10;
-    paddingLeft = 11;
-
-    let effect = setInterval(runEffect, 1);
-
-    function runEffect() {
-        if (navWidth < 3) {
-            nav.style.width = '3rem';
-            header.style.paddingLeft = '4rem';
-            main.style.paddingLeft = '4rem';
-
-            clearInterval(effect);
-            return;
-        }
-
-        else {
-            navWidth -= 0.1;
-            nav.style.width = `${navWidth}rem`;
-
-            paddingLeft -= 0.1;
-            header.style.paddingLeft = `${paddingLeft}rem`;
-            main.style.paddingLeft = `${paddingLeft}rem`;
-        };
-
-        console.log(navWidth);
-    };
+    nav.classList.remove('untucked');
+    nav.classList.add('tucked');
+    return;
 };
-
-
 
 function untuckHamburger() {
     hamburgerTucked = false;
-    navWidth = 3;
-    paddingLeft = 4;
+    nav.classList.remove('tucked');
+    nav.classList.add('untucked');
+    return;
+};
 
-    let effect = setInterval(runEffect, 1);
+function decreasePaddingLeft() {
+    header.classList.remove('increased');
+    main.classList.remove('increased');
+    header.classList.add('decreased');
+    main.classList.add('decreased');
+    return;
+};
 
-    function runEffect() {
-        if (navWidth > 10) {
-            nav.style.width = '10rem';
-            header.style.paddingLeft = '11rem';
-            main.style.paddingLeft = '11rem';
-
-            clearInterval(effect);
-            return;
-        }
-
-        else {
-            navWidth += 0.1;
-            nav.style.width = `${navWidth}rem`;
-
-            paddingLeft += 0.1;
-            header.style.paddingLeft = `${paddingLeft}rem`;
-            main.style.paddingLeft = `${paddingLeft}rem`;
-        };
-
-        console.log(navWidth);
-    };
+function increasePaddingLeft() {
+    header.classList.remove('decreased');
+    main.classList.remove('decreased');
+    header.classList.add('increased');
+    main.classList.add('increased');
+    return;
 };
 
 
+
+/* EVENT LISTENERS ************************************************************** */
 
 window.addEventListener('resize', function() {
     if (window.innerWidth > 600) {
         if (hamburgerTucked === true) {
             untuckHamburger();
-            setTimeout(showNavContent, 300);
-        };
+            increasePaddingLeft();
+            setTimeout(showNavContent, 600);
+        }
     };
 
     if (window.innerWidth < 600) {
         if (hamburgerTucked === false) {
             hideNavContent();
-            setTimeout(tuckHamburger, 100);
+            setTimeout(tuckHamburger, 300);
+            setTimeout(decreasePaddingLeft, 300);
         };
     };
 });
 
+
+
+/* EXECUTION ********************************************************************** */
 
 function initialize() {
 
