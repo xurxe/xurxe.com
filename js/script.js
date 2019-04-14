@@ -1,12 +1,13 @@
 /* CONSTANTS ********************************************************************** */
-let hamburgerTucked;
-
+let navTucked;
+let navExpanded;
 
 
 /* QUERY SELECTORS **************************************************************** */
 const nav = document.querySelector('nav');
 const navLogoDiv = document.querySelector('.nav-logo-div');
 const navDivs = document.querySelectorAll('.nav-div');
+const hamburger = document.querySelector('.hamburger');
 
 const header = document.querySelector('header');
 const main = document.querySelector('main');
@@ -15,33 +16,53 @@ const main = document.querySelector('main');
 
 /* FUNCTIONS ********************************************************************** */
 
-function hideNavContent() {
-    for (let i = 0; i < navDivs.length; i++) {
-        navDivs[i].classList.remove('visible');
-        navDivs[i].classList.add('invisible');
-    };
+function setDisplayBlock(element) {
+    element.style.display = 'block';
     return;
 };
 
-function showNavContent() {
-    for (let i = 0; i < navDivs.length; i++) {
-        navDivs[i].classList.remove('invisible');
-        navDivs[i].classList.add('visible');
-    };
+function setDisplayNone(element) {
+    element.style.display = 'none';
     return;
 };
 
-function tuckHamburger() {
-    hamburgerTucked = true;
+function hide(element) {
+    element.classList.remove('visible');
+    element.classList.add('invisible');
+    return;
+};
+
+function show(element) {
+    element.classList.remove('invisible');
+    element.classList.add('visible');
+    return;
+};
+
+function tuckNav() {
+    navTucked = true;
     nav.classList.remove('untucked');
     nav.classList.add('tucked');
     return;
 };
 
-function untuckHamburger() {
-    hamburgerTucked = false;
+function untuckNav() {
+    navTucked = false;
     nav.classList.remove('tucked');
     nav.classList.add('untucked');
+    return;
+};
+
+function toggleNav() {
+    if (navExpanded === false) {
+        nav.classList.add('expanded');
+        navExpanded = true;
+    }
+
+    else {
+        nav.classList.remove('expanded');
+        navExpanded = false;
+    }
+
     return;
 };
 
@@ -89,26 +110,48 @@ function generateCreation(object) {
 
 
 
+
 /* EVENT LISTENERS ************************************************************** */
 
 window.addEventListener('resize', function() {
     if (window.innerWidth > 600) {
-        if (hamburgerTucked === true) {
-            untuckHamburger();
+        if (navTucked === true) {
+            hide(hamburger);
+            untuckNav();
             increasePaddingLeft();
-            setTimeout(showNavContent, 600);
-        }
+
+/*             setTimeout(function() {
+                setDisplayNone(hamburger);
+
+            }, 550); */
+
+            setTimeout(function() {
+                for (let i = 0; i < navDivs.length; i++) {
+                    show(navDivs[i]);
+                };
+            }, 600);
+        };
     };
 
     if (window.innerWidth < 600) {
-        if (hamburgerTucked === false) {
-            hideNavContent();
-            setTimeout(tuckHamburger, 300);
-            setTimeout(decreasePaddingLeft, 300);
+        if (navTucked === false) {
+            for (let i = 0; i < navDivs.length; i++) {
+                hide(navDivs[i]);
+            };
+
+            setTimeout(function() {
+                tuckNav();
+                show(hamburger);
+                decreasePaddingLeft();
+            }, 300);
         };
     };
 });
 
+hamburger.addEventListener('click', function() {
+    console.log('hello');
+    toggleNav();
+});
 
 
 /* EXECUTION ********************************************************************** */
@@ -116,19 +159,19 @@ window.addEventListener('resize', function() {
 function initialize() {
 
     if (window.innerWidth > 600) {
-        hamburgerTucked = false;
+        navTucked = false;
     }
 
     else {
-        nav.style.width = '3rem';
-        header.style.paddingLeft = '4rem';
-        main.style.paddingLeft = '4rem';
-        hamburgerTucked = true;
-
         for (let i = 0; i < navDivs.length; i++) {
-            navDivs[i].style.opacity = '0';
-            navDivs[i].style.display = 'none';
+            hide(navDivs[i]);
         };
+
+        setTimeout(function() {
+            tuckNav();
+            show(hamburger);
+            decreasePaddingLeft();
+        }, 300);
     };
 
     for (let i = 0; i < creations.length; i++) {

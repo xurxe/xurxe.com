@@ -19,6 +19,10 @@ a {
     cursor: pointer;
 }
 
+button {
+    cursor: pointer;
+}
+
 img {
     width: 100%;
 }
@@ -124,6 +128,15 @@ nav p {
     letter-spacing: 0.4em;
 }
 
+.hamburger {
+    border-radius: 0;
+    border: none;
+    left: 0.5rem; 
+    position: absolute;
+    top: 0.5rem;
+    width: 2rem;
+}
+
 
 
 /* HEADER ***************************************************************** */
@@ -189,6 +202,12 @@ main {
 
 .tucked {
     width: 3rem;
+    transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
+    -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.expanded {
+    width: 100%;
     transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
