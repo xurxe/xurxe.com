@@ -62,9 +62,9 @@ function collapseNav() {
 
 function increasePaddingLeft() {
     header.classList.remove('decreased');
-    main.classList.remove('decreased');
-
     header.classList.add('increased');
+
+    main.classList.remove('decreased');
     main.classList.add('increased');
 
     return;
@@ -72,9 +72,9 @@ function increasePaddingLeft() {
 
 function decreasePaddingLeft() {
     header.classList.remove('increased');
-    main.classList.remove('increased');
-
     header.classList.add('decreased');
+
+    main.classList.remove('increased');
     main.classList.add('decreased');
 
     return;
@@ -111,6 +111,19 @@ function generateCreation(object) {
 
 window.addEventListener('resize', function() {
     if (window.innerWidth > 600) {
+
+        if (nav.classList.contains('expanded')) {
+            for (let i = 0; i < navDivs.length; i++) {
+                makeInvisible(navDivs[i]);
+            };
+    
+            setTimeout(function() {
+                collapseNav();
+                makeVisible(header);
+                makeVisible(main);
+            }, 300);
+        };
+
         if (nav.classList.contains('tucked')) {
             makeInvisible(hamburger);
             untuckNav();
@@ -161,7 +174,6 @@ hamburger.addEventListener('click', function() {
         for (let i = 0; i < navDivs.length; i++) {
             makeInvisible(navDivs[i]);
         };
-        body.style.overflowX = 'scroll';
 
         setTimeout(function() {
             collapseNav();
@@ -172,7 +184,6 @@ hamburger.addEventListener('click', function() {
 
     else {
         expandNav();
-        body.style.overflowX = 'hidden';
 
         setTimeout(function() {
             for (let i = 0; i < navDivs.length; i++) {
