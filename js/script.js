@@ -80,30 +80,6 @@ function decreasePaddingLeft() {
     return;
 };
 
-function generateCreationColor() {
-    let L = Math.round(Math.random() * (95 - 65) + 65);
-    let hsl = `hsl(274, 47%, ${L}%)`;
-    return hsl;
-};
-
-function generateCreation(object) {
-    let {title, src, alt, href} = object;
-    let creation = document.createElement('a');
-    creation.className = 'creation';
-    creation.href = href;
-    creation.style.backgroundColor = generateCreationColor();
-    main.appendChild(creation);
-
-    let innerHTML = `
-    <div class="creation-div">
-        <img class="creation-img" src="${src}" alt="${alt}">
-    </div>
-    <p class="creation-p">${title}</p>`
-
-    creation.innerHTML = innerHTML;
-    return;
-};
-
 
 
 
@@ -212,10 +188,6 @@ function initialize() {
         tuckNav();
         makeVisible(hamburger);
         decreasePaddingLeft();
-    };
-
-    for (let i = 0; i < creations.length; i++) {
-        generateCreation(creations[i]);
     };
 
     return;
