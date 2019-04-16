@@ -88,6 +88,7 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
 nav div {
@@ -129,6 +130,8 @@ nav p {
 .hamburger {
     background-color: white;
     position: absolute;
+    top: 0;
+    left: 0;
     width: 2rem;
 }
 
@@ -202,6 +205,7 @@ main {
 }
 
 .expanded {
+    padding-left: 25%;
     width: 100%;
     transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
