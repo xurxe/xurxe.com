@@ -6,6 +6,8 @@
 
 * {
     box-sizing: border-box;
+    border: none;
+    border-radius: 0;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     outline: none;
@@ -15,11 +17,7 @@
     text-decoration: none;
 }
 
-a {
-    cursor: pointer;
-}
-
-button {
+a, button {
     cursor: pointer;
 }
 
@@ -60,7 +58,8 @@ h2 {
     font-size: 30px;
     font-weight: normal;
     letter-spacing: 0.05em;
-    margin: 1rem 0 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
 strong {
@@ -85,21 +84,20 @@ strong {
 /* NAV ******************************************************************** */
 nav {
     background: #8844bb;
-    left: 0;
     min-height: 100vh;
-    padding: 1rem 0;
     position: fixed;
     top: 0;
+    left: 0;
 }
 
 nav div {
-    padding: 1rem 0;
+    padding-bottom: 1.5rem;
 }
 
 nav a {
     display: block;
     letter-spacing: 0.2em;
-    padding: 0.2rem 1rem 0.3rem;
+    padding: 0.2rem 1.5rem 0.3rem;
 }
 
 nav p {
@@ -108,7 +106,7 @@ nav p {
 
 .nav-logo-div {
     background: white;
-    margin: 0 1rem;
+    margin: 1.5rem 1.5rem 0.9rem;
     padding: 0;
     width: 8rem;
 }
@@ -129,11 +127,8 @@ nav p {
 }
 
 .hamburger {
-    border-radius: 0;
-    border: none;
-    left: 0.5rem; 
+    background-color: white;
     position: absolute;
-    top: 0.5rem;
     width: 2rem;
 }
 
@@ -160,7 +155,7 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     padding-top: 2rem;
-    padding-right: 0;
+    padding-right: 2rem;
     padding-bottom: 2rem;
     padding-left: 11rem;
     width: 100vw;
@@ -195,13 +190,13 @@ main {
 
 /* ANIMATIONS *********************************************************************** */
 .untucked {
-    width: 10rem;
+    width: 11rem;
     transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .tucked {
-    width: 3rem;
+    width: 2rem;
     transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
@@ -213,13 +208,13 @@ main {
 }
 
 .increased {
-    padding-left: 13rem;
+    padding-left: 14rem;
     transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .decreased {
-    padding-left: 4rem;
+    padding-left: 3rem;
     transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
     -webkit-transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
 }

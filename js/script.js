@@ -18,23 +18,27 @@ const main = document.querySelector('main');
 
 function setDisplayBlock(element) {
     element.style.display = 'block';
+
     return;
 };
 
 function setDisplayNone(element) {
     element.style.display = 'none';
+
     return;
 };
 
-function hide(element) {
-    element.classList.remove('visible');
-    element.classList.add('invisible');
-    return;
-};
-
-function show(element) {
+function makeVisible(element) {
     element.classList.remove('invisible');
     element.classList.add('visible');
+
+    return;
+};
+
+function makeInvisible(element) {
+    element.classList.remove('visible');
+    element.classList.add('invisible');
+
     return;
 };
 
@@ -42,6 +46,7 @@ function tuckNav() {
     navTucked = true;
     nav.classList.remove('untucked');
     nav.classList.add('tucked');
+
     return;
 };
 
@@ -49,6 +54,7 @@ function untuckNav() {
     navTucked = false;
     nav.classList.remove('tucked');
     nav.classList.add('untucked');
+
     return;
 };
 
@@ -66,19 +72,23 @@ function toggleNav() {
     return;
 };
 
-function decreasePaddingLeft() {
-    header.classList.remove('increased');
-    main.classList.remove('increased');
-    header.classList.add('decreased');
-    main.classList.add('decreased');
-    return;
-};
-
 function increasePaddingLeft() {
     header.classList.remove('decreased');
     main.classList.remove('decreased');
+
     header.classList.add('increased');
     main.classList.add('increased');
+
+    return;
+};
+
+function decreasePaddingLeft() {
+    header.classList.remove('increased');
+    main.classList.remove('increased');
+
+    header.classList.add('decreased');
+    main.classList.add('decreased');
+
     return;
 };
 
@@ -116,32 +126,43 @@ function generateCreation(object) {
 window.addEventListener('resize', function() {
     if (window.innerWidth > 600) {
         if (navTucked === true) {
-            hide(hamburger);
+            makeInvisible(hamburger);
             untuckNav();
             increasePaddingLeft();
 
-/*             setTimeout(function() {
+            setTimeout(function() {
+                for (let i = 0; i < navDivs.length; i++) {
+                    makeInvisible(navDivs[i]);
+                };
                 setDisplayNone(hamburger);
 
-            }, 550); */
+            }, 300);
 
             setTimeout(function() {
                 for (let i = 0; i < navDivs.length; i++) {
-                    show(navDivs[i]);
+                    makeVisible(navDivs[i]);
                 };
             }, 600);
         };
-    };
+    }
 
-    if (window.innerWidth < 600) {
+    else {
         if (navTucked === false) {
             for (let i = 0; i < navDivs.length; i++) {
-                hide(navDivs[i]);
+                makeInvisible(navDivs[i]);
             };
 
             setTimeout(function() {
+                for (let i = 0; i < navDivs.length; i++) {
+                    makeInvisible(navDivs[i]);
+                };
+
+                setDisplayBlock(hamburger);
+            }, 200);
+
+            setTimeout(function() {
                 tuckNav();
-                show(hamburger);
+                makeVisible(hamburger);
                 decreasePaddingLeft();
             }, 300);
         };
@@ -149,7 +170,6 @@ window.addEventListener('resize', function() {
 });
 
 hamburger.addEventListener('click', function() {
-    console.log('hello');
     toggleNav();
 });
 
@@ -164,14 +184,11 @@ function initialize() {
 
     else {
         for (let i = 0; i < navDivs.length; i++) {
-            hide(navDivs[i]);
+            makeInvisible(navDivs[i]);
         };
-
-        setTimeout(function() {
-            tuckNav();
-            show(hamburger);
-            decreasePaddingLeft();
-        }, 300);
+        tuckNav();
+        makeVisible(hamburger);
+        decreasePaddingLeft();
     };
 
     for (let i = 0; i < creations.length; i++) {
