@@ -69,7 +69,9 @@ skills = {
         {'empathy': 5},
         {'enthusiasm': 8},
     ],
-}
+};
+
+
 
 function generateStars(value) {
     let innerHtml = '';
@@ -85,13 +87,13 @@ function generateStars(value) {
 
 function generateSkill(object) {
     let key = Object.keys(object);
-    let value = Object.values(object);
     let innerHtml = `
-            <div class="skill-div flex-row">
+            <div class="skill-div">
                 <p class="skill-p">${key}</p>
                 <div class="stars-div">`
     ;
 
+    let value = Object.values(object);
     innerHtml += generateStars(value)
 
     innerHtml += `
@@ -109,13 +111,13 @@ function generateSkillCategory(object) {
     let innerHtml = '';
 
     for (i = 0; i < categories.length; i++) {
-        let array = Object.values(Object.values(object)[i]);
         innerHtml +=`
         <div class="skill-category-div">
             <h2>${categories[i]}</h2>
             <div class="skills-div">`
         ;
     
+        let array = Object.values(Object.values(object)[i]);
         for (let j = 0; j < array.length; j++) {
             innerHtml += generateSkill(array[j]);
         }
@@ -124,9 +126,8 @@ function generateSkillCategory(object) {
             </div>
         </div>
         `;
-    }
+    };
 
-    console.log(innerHtml);
     return innerHtml;
 };
 

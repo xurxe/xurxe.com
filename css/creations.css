@@ -1,0 +1,24 @@
+.creation {
+    background: #8844bb;
+    display: block;
+    flex-shrink: 1;
+    height: 300px;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    overflow: hidden;
+    padding: 1rem;
+    position: relative;
+    width: 300px;
+}
+
+.creation-div {
+    background: white;
+    height: 198px;
+    width: 100%;
+}
+
+.creation-p {
+    color: #1b0d25;
+    padding: 1rem 0 0;
+    text-align: center;
+}

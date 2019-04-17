@@ -34,10 +34,8 @@ html {
     font-size: 18px;
 }
 
-@media only screen and (max-width: 600px) {
-    body {
-        overflow-x: auto;
-    }
+body {
+    overflow-x: auto;
 }
 
 h1 {
@@ -100,66 +98,6 @@ strong {
 
 
 
-/* NAV ******************************************************************** */
-nav {
-    background: #8844bb;
-    min-height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-}
-
-nav div {
-    padding-bottom: 1.5rem;
-}
-
-nav a {
-    display: block;
-    letter-spacing: 0.2em;
-    padding: 0.2rem 1.5rem 0.3rem;
-}
-
-.nav-name-div a {
-    padding: 0.2rem 1.5rem 0.5rem;
-}
-
-nav p {
-    overflow-y: hidden;
-}
-
-.nav-logo-div {
-    background: white;
-    margin: 1.5rem 1.5rem 0.9rem;
-    padding: 0;
-    width: 8rem;
-}
-
-.nav-name-div p {
-    font-family: 'Roboto Mono', monospace;
-    line-height: 1.2em;
-}
-
-.nav-name-first, .nav-name-middle {
-    font-size: 2.1rem;
-    letter-spacing: 0.2em;
-}
-
-.nav-name-last {
-    font-size: 1.4rem;
-    letter-spacing: 0.4em;
-}
-
-.hamburger {
-    background-color: #8844bb;
-    display: none;
-    position: absolute;
-    top: 0.1rem;
-    left: 0.1rem;
-    width: 1.8rem;
-}
-
-
 
 /* HEADER ***************************************************************** */
 
@@ -181,7 +119,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     padding-top: 2rem;
-    padding-right: 2rem;
+    padding-right: 1rem;
     padding-bottom: 2rem;
     padding-left: 11rem;
     width: 100vw;
@@ -193,148 +131,4 @@ main {
 
 .flex-column {
     flex-direction: column;
-}
-
-.creation {
-    background: #8844bb;
-    display: block;
-    flex-shrink: 1;
-    height: 300px;
-    margin-bottom: 1rem;
-    margin-right: 1rem;
-    overflow: hidden;
-    padding: 1rem;
-    position: relative;
-    width: 300px;
-}
-
-.creation-div {
-    background: white;
-    height: 198px;
-    width: 100%;
-}
-
-.creation-p {
-    color: #1b0d25;
-    padding: 1rem 0 0;
-    text-align: center;
-}
-
-
-
-/* ANIMATIONS *********************************************************************** */
-.untucked {
-    width: 11rem;
-    transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.tucked {
-    width: 2rem;
-    transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.expanded {
-    padding-left: 2rem;
-    padding-top: 2rem;
-    width: 100%;
-    transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: width 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.increased {
-    padding-left: 14rem;
-    transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.decreased {
-    padding-left: 3rem;
-    transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: padding-left 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.visible {
-    opacity: 1;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.invisible {
-    opacity: 0;
-    transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-    -webkit-transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.white-text-with-effect {
-    color: white;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -o-font-smoothing: antialiased;
-    background-color: #8844bb;
-    transition: background-color 0.5s;
-    -webkit-transition: background-color 0.5s;
-}
-
-.white-text-with-effect:hover, .white-text-with-effect:focus {
-    background-color: #9f69c8;
-    transition: background-color 1s;
-    -webkit-transition: background-color 1s;
-}
-
-.skill-category-div {
-    margin-right: 3rem;
-    margin-bottom: 3rem;
-}
-
-.skill-div {
-    display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: 12rem 10rem;
-}
-
-.star-div {
-    background-color: #8844bb;
-    display: inline-block;
-    height: 1rem;
-    width: 1rem;
-}
-
-.skill-p {
-    padding-bottom: 0.5rem;
-}
-
-.star-1 {
-    background-color: #dbc6ea; 
-}
-
-.star-2 {
-    background-color: #cfb4e3;
-}
-
-.star-3 {
-    background-color: #c3a1dd;
-}
-
-.star-4 {
-    background-color: #b78ed6;
-}
-
-.star-5 {
-    background-color: #ab7ccf;
-}
-
-.star-6 {
-    background-color: #9f69c8;
-}
-
-.star-7 {
-    background-color: #9356c1;
-}
-
-.star-8 {
-    background-color: #8844bb;
 }
