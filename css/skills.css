@@ -1,12 +1,12 @@
 .skill-category-div {
-    margin-right: 3rem;
-    margin-bottom: 3rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
 }
 
 .skill-div {
     display: grid;
     grid-auto-flow: row;
-    grid-template-columns: 10rem 10rem;
+    grid-template-columns: 8.5rem 10rem;
 }
 
 .stars-div {
@@ -19,6 +19,7 @@
 
 .star-div {
     background-color: #8844bb;
+    border: none;
     height: 1rem;
     width: 1rem;
     margin-right: 0.25rem;

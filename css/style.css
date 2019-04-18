@@ -34,7 +34,7 @@ html {
     font-size: 18px;
 }
 
-body {
+main {
     overflow-x: auto;
 }
 
@@ -83,6 +83,11 @@ strong {
     }
 }
 
+h3 {
+    color: #512870;
+    margin-bottom: 0.5rem; 
+}
+
 .white-text {
     color: white;
     text-rendering: optimizeLegibility;
@@ -96,7 +101,21 @@ strong {
     font-style: italic;
 }
 
+.main-text {
+    margin-bottom: 1.5rem;
+    margin-right: 4rem;
+    max-width: 35rem;
+}
 
+@media only screen and (max-width: 600px) {
+    .main-text {
+        margin-right: 2rem;
+    } 
+}
+
+p {
+    line-height: 1.5rem;
+}
 
 
 /* HEADER ***************************************************************** */
@@ -116,19 +135,21 @@ header p {
 
 /* MAIN ******************************************************************* */
 main {
-    display: flex;
-    flex-wrap: wrap;
     padding-top: 2rem;
-    padding-right: 1rem;
+    padding-right: 0;
     padding-bottom: 2rem;
     padding-left: 11rem;
     width: 100vw;
 }
 
 .flex-row {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .flex-column {
+    display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }

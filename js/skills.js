@@ -1,5 +1,5 @@
 skills = {
-    'programming languages': [
+    'coding': [
         {'HTML': 5},
         {'CSS': 5},
         {'JavaScript': 3},
@@ -8,7 +8,7 @@ skills = {
         {'binary': 1},
     ],
 
-    'natural languages': [
+    'languages': [
         {'English': 5},
         {'Spanish': 5},
         {'Galician': 5},
@@ -17,7 +17,7 @@ skills = {
     ],
 
     'photo and illustration': [
-        {'digital photography': 5},
+        {'photography': 5},
         {'Lightroom CC': 5},
         {'watercolor': 5},
         {'gouache': 4},

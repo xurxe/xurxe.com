@@ -117,3 +117,14 @@ nav p {
     transition: background-color 1s;
     -webkit-transition: background-color 1s;
 }
+
+.white-text-with-effect:active {
+    background-color: white;
+    color: #8844bb;
+    -webkit-font-smoothing: auto;
+    -moz-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    -o-font-smoothing: auto;
+    transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+}
